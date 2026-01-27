@@ -1,0 +1,275 @@
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Zen Mincho New", "Yu Mincho", serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 480px;
+    /* Mobile constraints */
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    letter-spacing: 0.1em;
+    position: relative;
+    display: inline-block;
+}
+
+.divider {
+    margin: 40px auto;
+    width: 80%;
+    height: auto;
+}
+
+.text-content {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Service Cards */
+.service-card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+}
+
+.service-name {
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.service-reading {
+    font-size: 12px;
+    margin-bottom: 15px;
+    display: block;
+    opacity: 0.8;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.service-list {
+    text-align: left;
+    font-size: 14px;
+    list-style: none;
+    padding-left: 10px;
+}
+
+.service-list li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.service-list li::before {
+    content: "・";
+    position: absolute;
+    left: 0;
+}
+
+/* CTA Button */
+.cta-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.footer {
+    padding: 20px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* --- Pattern A: Elegant (Miyabi) --- */
+.pattern-a {
+    background-image: url('../assets/bg_pattern_a_elegant_1768975979055.png');
+    background-size: 500px;
+    /* Repeat */
+    color: #4a3b32;
+}
+
+.pattern-a .section-title {
+    color: #8E744A;
+    /* Gold/Brown */
+    border-bottom: 1px solid #8E744A;
+    padding-bottom: 10px;
+}
+
+.pattern-a .service-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #D4AF37;
+    box-shadow: 0 4px 10px rgba(142, 116, 74, 0.1);
+}
+
+.pattern-a .service-name {
+    color: #2F2F2F;
+}
+
+.pattern-a .cta-button {
+    background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
+}
+
+/* --- Pattern B: Mystical (Shinpi) --- */
+.pattern-b {
+    background-image: url('../assets/bg_pattern_b_mystical_1768975994758.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+.pattern-b .container {
+    background: transparent;
+}
+
+.pattern-b .section-title {
+    color: #FFE6A8;
+    text-shadow: 0 0 10px rgba(255, 230, 168, 0.5);
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.5), transparent);
+    padding: 10px;
+}
+
+.pattern-b .service-card {
+    /* Use the same background but with a heavy overlay */
+    background: linear-gradient(rgba(10, 20, 60, 0.85), rgba(10, 20, 60, 0.85)), url('../assets/bg_pattern_b_mystical_1768975994758.png');
+    background-size: 200%;
+    /* Zoom in for different texture feel */
+    background-position: center;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    color: #eee;
+    box-shadow: 0 0 15px rgba(255, 230, 168, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.pattern-b .service-card::before {
+    /* Decorative glowing border effect */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #FFE6A8, transparent);
+}
+
+.pattern-b .service-name {
+    color: #FFE6A8;
+    border-bottom: 1px solid rgba(255, 230, 168, 0.3);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.pattern-b .cta-button {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border: 1px solid #FFE6A8;
+    color: #FFE6A8;
+    box-shadow: 0 0 15px rgba(30, 60, 114, 0.6);
+    text-shadow: 0 0 5px rgba(255, 230, 168, 0.5);
+}
+
+/* --- Pattern C: Healing (Iyashi) --- */
+.pattern-c {
+    background-image: url('../assets/bg_pattern_c_healing_1768976010591.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #554444;
+}
+
+.pattern-c .section-title {
+    color: #E08E9D;
+    font-weight: normal;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(2px);
+    padding: 5px 20px;
+    border-radius: 50px;
+}
+
+.pattern-c .service-card {
+    /* Use the same background with white overlay */
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../assets/bg_pattern_c_healing_1768976010591.png');
+    background-size: 150%;
+    /* border: 2px solid #FCE4EC; */
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(224, 142, 157, 0.2);
+    position: relative;
+}
+
+.pattern-c .service-card::after {
+    /* Inner border */
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px dashed #F8BBD0;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.pattern-c .service-name {
+    color: #D86D7E;
+    position: relative;
+    z-index: 1;
+}
+
+.pattern-c .cta-button {
+    background: linear-gradient(to right, #F8BBD0, #F48FB1);
+    color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(244, 143, 177, 0.4);
+    border: none;
+}
