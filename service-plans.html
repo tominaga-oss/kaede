@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern A: Elegant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Mincho+New:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    /* Reset & Base */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "Zen Mincho New", "Yu Mincho", serif;
+        line-height: 1.8;
+        font-size: 16px;
+        color: #333;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .container {
+        max-width: 480px;
+        margin: 0 auto;
+        background-color: #fff;
+        min-height: 100vh;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero {
+        position: relative;
+        width: 100%;
+    }
+
+    .section {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+        letter-spacing: 0.1em;
+        position: relative;
+        display: inline-block;
+    }
+
+    .divider {
+        margin: 40px auto;
+        width: 80%;
+        height: auto;
+    }
+
+    .text-content {
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    /* Service Cards */
+    .service-card {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 30px 20px;
+        margin-bottom: 30px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+    }
+
+    .service-name {
+        font-size: 22px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .service-reading {
+        font-size: 12px;
+        margin-bottom: 15px;
+        display: block;
+        opacity: 0.8;
+    }
+
+    .service-subtitle {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+        color: #555;
+        font-weight: 500;
+    }
+
+    .service-description {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: left;
+        color: #333;
+    }
+
+    .service-section-header {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        text-align: left;
+        color: #333;
+    }
+
+    .price {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .service-list {
+        text-align: left;
+        font-size: 14px;
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .service-list li {
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 0;
+        line-height: 1.8;
+    }
+
+    .service-list li::before {
+        content: "";
+    }
+
+    .service-list-title {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .service-list-desc {
+        font-size: 13px;
+        line-height: 1.7;
+        color: #555;
+        padding-left: 10px;
+    }
+
+    .service-list-subdesc {
+        font-size: 13px;
+        line-height: 1.7;
+        color: #666;
+        padding-left: 20px;
+        margin-top: 5px;
+    }
+
+    .recommendation-section {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .recommendation-title {
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        text-align: left;
+        color: #333;
+    }
+
+    .recommendation-list {
+        text-align: left;
+        font-size: 14px;
+        list-style: none;
+        padding-left: 10px;
+    }
+
+    .recommendation-list li {
+        margin-bottom: 8px;
+        position: relative;
+        padding-left: 15px;
+        line-height: 1.7;
+    }
+
+    .recommendation-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #8E744A;
+    }
+
+    /* CTA Button */
+    .cta-button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        margin-top: 20px;
+        transition: all 0.3s;
+        background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
+    }
+
+    .footer {
+        padding: 20px;
+        font-size: 12px;
+        text-align: center;
+        opacity: 0.7;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 480px) {
+        .service-card {
+            padding: 25px 15px;
+        }
+
+        .service-name {
+            font-size: 20px;
+        }
+
+        .service-subtitle {
+            font-size: 13px;
+        }
+
+        .service-description {
+            font-size: 13px;
+        }
+
+        .service-list {
+            font-size: 13px;
+        }
+
+        .service-list-desc {
+            font-size: 12px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Hero Section -->
+    <header class="hero">
+        <img src="https://kaede-uranai.com/system/imgs/top.png" alt="Service Menu">
+    </header>
+
+    <div style="width: 100%; margin: 0; padding: 0;">
+        <img src="https://eminem-soul.com/system/imgs/20260130-a7fa53b4ee1d4a5b904eb07f2032e8f4-attachment.png" alt="" style="width: 100%; display: block; margin: 0; padding: 0;">
+    </div>
+
+    <div style="width: 100%; margin: 0; padding: 0;">
+        <img src="https://kaede-uranai.com/system/imgs/subtitle_image_wide.png" alt="日々の波動を整え、本来歩くべき路へと繋げる3つの特別空間。" style="width: 100%; display: block; margin: 0; padding: 0;">
+    </div>
+
+    <!-- Services Section -->
+    <section class="section" style="padding-top: 30px; padding-bottom: 5px;">
+
+        <!-- FIRST SERVICE CARD: 縁結の間 -->
+        <div class="service-card" style="background-image: url('https://kaede-uranai.com/system/imgs/plan_card_bg.png'); background-size: cover; background-position: center;">
+            <h3 class="service-name" style="font-size: 28px; color: #8E744A; text-align: center; margin-bottom: 8px; font-weight: bold; letter-spacing: 0.15em; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">縁結の間</h3>
+            <span class="service-reading" style="font-size: 14px; display: block; text-align: center; margin-bottom: 20px; opacity: 0.9;">（えんむすび）</span>
+
+            <p class="service-subtitle">まずは整える、流れに乗る。神仏のご縁とつながるための入口です。</p>
+
+            <p class="price">¥2,980/月</p>
+
+            <p class="service-description">縁結の間は、しあわせ荘の空気に触れ、日常の中で運気の流れを整えていくための基本の間です。</p>
+
+            <h4 class="service-section-header">含まれる内容</h4>
+
+            <ul class="service-list">
+                <li>
+                    <span class="service-list-title">◆みんなの伝言板</span>
+                    <div class="service-list-desc">同じように悩み、同じように願う人たちの言葉に触れる場所。書き込むことで気持ちが整理され、読むことで「自分だけじゃない」と気づけます。</div>
+                </li>
+                <li>
+                    <span class="service-list-title">◆しあわせカレンダー</span>
+                    <div class="service-list-desc">吉日・注意日・流れの切り替えどきが一目で分かる。行動のタイミングを誤らないための指針です。無理に頑張らず、自然な運気に乗る感覚を育てます。</div>
+                </li>
+                <li>
+                    <span class="service-list-title">◆お便りコーナー（閲覧＆書き込み）</span>
+                    <div class="service-list-desc">・嬉しい報告 ・ささやかな願い ・直近で起きた辛いこと<br>言葉にすることで心の中の滞りがほどけていきます</div>
+                </li>
+                <li>
+                    <span class="service-list-title">◆限定開運コラム（月2〜3本）</span>
+                    <div class="service-list-desc">すぐ使える考え方や知識を丁寧に解説したコラム。</div>
+                </li>
+            </ul>
+
+            <div class="recommendation-section">
+                <h5 class="recommendation-title">こんな方におすすめ</h5>
+                <ul class="recommendation-list">
+                    <li>まずは安心できる場所が欲しい</li>
+                    <li>運気を上げる前に土台を整えたい</li>
+                    <li>すべて一人で抱え込む癖を変えたい</li>
+                </ul>
+            </div>
+
+            <a href="#" class="cta-button">入会する</a>
+        </div>
+
+        <!-- SECOND SERVICE CARD: 深縁の間 -->
+        <div class="service-card" style="background-image: url('https://kaede-uranai.com/system/imgs/plan_card_bg.png'); background-size: cover; background-position: center; padding: 0;">
+            <img src="https://eminem-soul.com/system/imgs/20260203-cd0c19b3adf74fe39fa121d7bfe44e0b-attachment.png" alt="深縁の間" style="width: 100%; display: block; margin: 0;">
+            <img src="https://eminem-soul.com/system/imgs/20260203-7c04412b86d440f3bca7b3ac0df20a49.png" alt="深縁の間詳細" style="width: 100%; display: block; margin: 0;">
+            <div style="padding: 20px;">
+                <a href="#" class="cta-button">入会する</a>
+            </div>
+        </div>
+
+        <!-- THIRD SERVICE CARD: 天啓の間 -->
+        <div class="service-card" style="border: 2px solid #8E744A; background-image: url('https://kaede-uranai.com/system/imgs/plan_card_bg.png'); background-size: cover; background-position: center;">
+            <h3 class="service-name">天啓の間</h3>
+            <span class="service-reading">（てんけい）</span>
+
+            <p class="service-subtitle">個別に向き合い、あなた専用のエネルギー流れを整える最上位の空間。</p>
+
+            <p class="price">¥29,800/月</p>
+
+            <p class="service-description">天啓の間は、「自分の人生を本気で整えたい」と願う方のための空間です。グループでの調律に加え、個別での対話と現実的な提案などが含まれます。</p>
+
+            <h4 class="service-section-header">※追加される内容</h4>
+
+            <ul class="service-list">
+                <li>
+                    <span class="service-list-title">◆月1回の個別鑑定</span>
+                    <div class="service-list-subdesc">
+                        ・今の波動の状況<br>
+                        ・選択の分岐点<br>
+                        ・迷いの正体<br>
+                        あなたの背景を踏まえ、言葉とエネルギーの両面から読み解きます。「どうすればいいか」だけでなく、「なぜ今こうなっているのか」まで丁寧にお伝えします。
+                    </div>
+                </li>
+                <li>
+                    <span class="service-list-title">◆オリジナル浄化塩のお届け</span>
+                    <div class="service-list-desc">毎月初めに、祈禱済みの浄化塩をお届けします。</div>
+                    <div class="service-list-subdesc">
+                        ・疲れた日<br>
+                        ・気持ちが乱れた時<br>
+                        ・悪いことばかりが続く<br>
+                        ・良いことがなにも起こらない<br>
+                        そんな悩みをそっと整え直すためのアイテムです。
+                    </div>
+                </li>
+            </ul>
+
+            <div class="recommendation-section">
+                <h5 class="recommendation-title">こんな方におすすめ</h5>
+                <ul class="recommendation-list">
+                    <li>人生の転換期にいると感じている</li>
+                    <li>誰にも話せない問題を抱えている</li>
+                    <li>自分の選択に確信と自信を持ちたい</li>
+                    <li>人生を180度変えるほどの力を持ちたい</li>
+                    <li>幸運や奇跡を引き寄せる波動を持ち続けたい</li>
+                </ul>
+            </div>
+
+            <a href="#" class="cta-button">入会する</a>
+        </div>
+
+    </section>
+
+    <footer class="footer" style="background-color: #ffffff; padding: 5px 20px 10px 20px; margin: 0;">
+        <p style="color: #333333; font-size: 14px; margin: 0;">※表示価格はすべて税込み・送料込みとなります</p>
+        <p style="margin-top: 30px; font-size: 18px; font-weight: bold; line-height: 1.6; color: #4a3b32;">限られた方だけの特別な空間を守るため、<br>月ごとの新規入会枠を限定しております。</p>
+    </footer>
+</div>
+
+<!-- MOVED: Header title image now at the bottom -->
+<div style="max-width: 480px; margin: 0 auto; padding: 0;">
+    <img src="https://kaede-uranai.com/system/imgs/header_title_dark.png" alt="あなたの毎日に、光と御導きを。" style="width: 100%; display: block; margin: 0; padding: 0;">
+</div>
+
+</body>
+</html>
